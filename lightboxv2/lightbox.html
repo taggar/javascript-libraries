@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lightbox Library Showcase</title>
+    <link href="css/lightbox.css" rel="stylesheet">
+    <style>
+        #sample a {
+            height: 150px;
+            width: 150px;
+            overflow: hidden;
+            background-size: cover;
+            line-height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lightbox</h1>
+
+    <h2>Essentials</h2>
+
+    <ul>
+        <li>Get the lightbox distribution.</li>
+        <li>Link to the lightbox css file.</li>
+        <li>Link the lightbox js file, just before the end body tag.</li>
+        <li>Encapsulate images - or text linking to them - in anchor tags linking to the image files.</li>
+        <li>Add the
+            <tt>data-lightbox</tt> attribute to the image link to enable Lightbox.
+            <ul>
+                <li>For 'solo' images, use a unique name for the data-lightbox attribute for each image.</li>
+                <li>For set of images, use the same name for the data-lightbox images on each image belonging to the
+                    set.</li>
+            </ul>
+        </li>
+        <li>Optionally add a
+            <tt>data-title</tt> attribute if you want to show a caption.</li>
+        <li>Optionally add a
+            <tt>data-alt</tt> attribute if you want to set the alt attribute of the linked image.</li>
+        <li>Optionally <a href="https://lokeshdhakar.com/projects/lightbox2/#options">set options</a> to use additional
+            features or modify default behaviours.</li>
+    </ul>
+
+    <h2>Sample Gallery</h2>
+    <div id="sample">
+        <a href="images/image-1.jpg" data-lightbox="sample" data-title="Enjoying the country-side."><img
+                src="images/image-1.jpg" alt=""></a>
+        <a href="images/image-2.jpg" data-lightbox="sample" data-title="Refreshments after a long walk."><img
+                src="images/image-2.jpg" alt=""></a>
+        <a href="images/image-3.jpg" data-lightbox="sample" data-title="Frisco's Golden Gate."><img
+                src="images/image-3.jpg" alt=""></a>
+        <a href="images/image-4.jpg" data-lightbox="sample" data-title="Can't see the wood for the trees."><img
+                src="images/image-4.jpg" alt=""></a>
+        <a href="images/image-5.jpg" data-lightbox="sample" data-title="Long road ahead."><img src="images/image-5.jpg"
+                alt=""></a>
+        <a href="images/image-6.jpg" data-lightbox="sample" data-title="Nearly there."><img src="images/image-6.jpg"
+                alt=""></a>
+    </div>
+
+    <script>
+        document.querySelectorAll('#sample a').forEach(function (a) {
+            a.style.backgroundImage = a.getAttribute('href');
+            a.querySelector('img').style.visibility = 'hidden';
+        });
+    </script>
+    <script src="js/lightbox-plus-jquery.js"></script>
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })
+    </script>
+</body>
+
+</html>
