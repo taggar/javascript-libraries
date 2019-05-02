@@ -14,6 +14,7 @@
             overflow: hidden;
             background-size: cover;
             line-height: 150px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -63,14 +64,15 @@
     <script>
         document.querySelectorAll('#sample a').forEach(function (a) {
             a.style.backgroundImage = a.getAttribute('href');
-            a.querySelector('img').style.visibility = 'hidden';
+            a.querySelector('img').style.display = 'inline-block';
         });
     </script>
     <script src="js/lightbox-plus-jquery.js"></script>
     <script>
         lightbox.option({
             'resizeDuration': 200,
-            'wrapAround': true
+            'wrapAround': true,
+            'positionFromTop': 300
         })
     </script>
 </body>
