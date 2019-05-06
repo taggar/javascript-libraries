@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./microlight/microlight.css">
     <link rel="stylesheet" href="./highlightjs/styles/atom-one-dark.css">
     <link rel="stylesheet" href="./enlighter/enlighterjs.min.css" />
+    <link rel="stylesheet" href="./prism/prism.css">
     <title>Highlighting Libraries</title>
 </head>
 
@@ -147,6 +148,35 @@ Code to be highlighted goes here
         });
     </script>
 
+
+    <h2>Prism</h2>
+
+    <p><a href="https://prismjs.com/">Prism.js</a> consists of just 1 css and 1 js file.</p>
+
+    <ol>
+        <li>Link the CSS file.</li>
+        <li>Call the script.</li>
+        <li>Assign the appropriate class names to relevant elements and presto!</li>
+    </ol>
+
+    <pre class="language-css line-numbers"><code>&lt;link href="themes/prism.css" rel="stylesheet" /&gt;
+... 
+&lt;pre&gt;&lt;code class="language-css"&gt;
+... 
+Code to be highlighted goes here
+... 
+p { color: red }
+... 
+&lt;/code&gt;&lt;/pre&gt;
+...
+&lt;script src="./path/to/prism.js"&gt;&lt;/script&gt;
+</code></pre>
+
+    <p>Using the data-src attribute you can even load source code from an external file!</p>
+
+    <pre class="line-numbers" data-src="./prism/prism.css" data-start="-5"></pre>
+
+    <script src="./prism/prism.js"></script>
 </body>
 
 </html>
