@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="EnlighterJS" content="Advanced javascript based syntax highlighting" data-indent="4"
+        data-selector-block="pre" data-selector-inline="code" data-language="javascript" />
+
+    <title>Faking data</title>
+</head>
+
+<body>
+
+    <h1>Faking data</h1>
+
+    <h2>Faker.js</h2>
+    <p>When building an application, we often need data to show realistically how it works. Creating a database and
+        filling it with realistic sample data can be quite time-consuming. Faker.js is a library that can be used both
+        standalone of in a node.js environment to mock large amounts of realistic data. during building an awesome
+        application.
+
+        There are many popular JavaScript libraries for generating mock data. In this article, we will be going through
+        Faker.js
+        which is the best-known library, but feel free to try the others too.</p>
+
+    <div id="name">
+        A faked name:
+        <pre></pre>
+    </div>
+    <div id="email">
+        A faked email:
+        <pre></pre>
+    </div>
+    <div id="finance">
+        A faked account number:
+        <pre></pre>
+    </div>
+    <div id="card">
+        A faked contact card:
+        <pre></pre>
+    </div>
+
+
+    <script src="faker.js" type="text/javascript"></script>
+    <script>
+        // var randomName = faker.name.findName(); // Caitlyn Kerluke
+        var randomName = faker.name.lastName() + ", " + faker.name.firstName() + ", " + faker.name.suffix();
+        var randomEmail = faker.internet.email(); // Rusty@arne.info
+        var randomCard = faker.helpers.createCard(); // random contact card containing many properties
+
+        document.getElementById('name').querySelector('pre').textContent = randomName;
+        document.getElementById('email').querySelector('pre').textContent = randomEmail;
+        document.getElementById('finance').querySelector('pre').textContent = faker.finance.account();
+        document.getElementById('card').querySelector('pre').textContent = JSON.stringify(randomCard, null, 5);
+
+    </script>
+</body>
+
+</html>
